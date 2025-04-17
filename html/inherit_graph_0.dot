@@ -1,0 +1,24 @@
+digraph "Graphical Class Hierarchy"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="QWidget",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node1 -> Node0 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node0 [label="Widget_Classes.Fuel\l_Gauge",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classWidget__Classes_1_1Fuel__Gauge.html",tooltip=" "];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="Widget_Classes.Menu",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classWidget__Classes_1_1Menu.html",tooltip=" "];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="Widget_Classes.Rotating\l_Image",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classWidget__Classes_1_1Rotating__Image.html",tooltip=" "];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="Widget_Classes.Speedometer",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classWidget__Classes_1_1Speedometer.html",tooltip=" "];
+  Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="Widget_Classes.Tachometer",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classWidget__Classes_1_1Tachometer.html",tooltip=" "];
+  Node1 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="Widget_Classes.Temp\l_Gauge",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classWidget__Classes_1_1Temp__Gauge.html",tooltip=" "];
+  Node1 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="Widget_Classes.Variable\l_Section",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classWidget__Classes_1_1Variable__Section.html",tooltip=" "];
+  Node1 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="Widget_Classes.Warning\l_Light",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classWidget__Classes_1_1Warning__Light.html",tooltip=" "];
+}

@@ -1,25 +1,23 @@
+"""!@brief Defines custom Widget classes for the Pyside6 python library to use in a digital dashboard with windows and linux support.
 
-
+Some features such as the custom font will not work for anyone without the font package.
+These widgets were originally designed for use on the Bobcat Baja Team.
+"""
 
 # General imports
 from PySide6.QtWidgets import *
 from PySide6.QtGui import *
 from PySide6.QtCore import *
 
-
-
 class Warning_Light(QWidget):
-    """
-    @class Warning_Light
-    @brief A QWidget-based warning light that displays a PNG image when activated.
+    """!@brief A QWidget-based warning light that displays a PNG image when activated.
 
     This widget is designed to show or hide a warning light image, useful in
     GUIs where visual alerts are needed. Can Be resized to fit any need when initialized.
     """
 
     def __init__(self, parent=None, png_path=None, height=100, width=100):
-        """
-        @brief Constructor for the Warning_Light widget.
+        """!@brief Constructor for the Warning_Light widget.
 
         @param parent The parent widget (optional).
         @param png_path Path to the PNG image to display as the warning light.
@@ -45,8 +43,7 @@ class Warning_Light(QWidget):
 
     
     def show_light(self):
-        """
-        @brief Toggles the warning light to be "On".
+        """!@brief Toggles the warning light to be "On".
 
         Call this function to make the warning light visible.
         """
@@ -54,8 +51,7 @@ class Warning_Light(QWidget):
 
     
     def hide_light(self):
-        """
-        @brief Toggles the warning light to be "Off".
+        """!@brief Toggles the warning light to be "Off".
 
         Call this function to make the warning light not visible.
         """
@@ -64,8 +60,7 @@ class Warning_Light(QWidget):
 
     
     def resizeEvent(self, event):
-        """
-        @brief Handle resize events and update label and pixmap accordingly.
+        """!@brief Handle resize events and update label and pixmap accordingly.
 
         This ensures the widget fills the specified area and the pixmap is scaled
         to fit while maintaining its aspect ratio.
@@ -83,17 +78,14 @@ class Warning_Light(QWidget):
 
 
 class Temp_Gauge(QWidget):
-    """
-    @class Temp_Gauge
-    @brief A QWidget-based vertical temperature gauge with gradient fill, tick marks and a value indicator.
+    """!@brief A QWidget-based vertical temperature gauge with gradient fill, tick marks and a value indicator.
 
     This custom widget visually represents a temperature value using a colored bar,
     tick marks, and numeric labels. The bar fills from green to red as the temperature increases.
     """
 
     def __init__(self, parent=None, max_value=300):
-        """
-        @brief Constructor for the Temp_Gauge widget.
+        """!@brief Constructor for the Temp_Gauge widget.
 
         @param parent The parent widget (optional).
         @param max_value The maximum temperature value the gauge can represent. Scales the gauge values based on this value.
@@ -110,8 +102,7 @@ class Temp_Gauge(QWidget):
 
 
     def add_to_value(self, change):
-        """
-        @brief Add to the temperature gauge value.
+        """!@brief Add to the temperature gauge value.
 
         @param change The add amount to change the current value by.
         The new value wraps around if it exceeds the max value.
@@ -121,8 +112,7 @@ class Temp_Gauge(QWidget):
         self.update()  # Request a redraw
 
     def update_value(self, new_value):
-        """
-        @brief Update the temperature gauge value.
+        """!@brief Update the temperature gauge value.
 
         @param new_value The new value for the gauge to be set to.
         The new value wraps around if it exceeds the max value.
@@ -132,8 +122,7 @@ class Temp_Gauge(QWidget):
         self.update()  # Request a redraw
 
     def paintEvent(self, event):
-        """
-        @brief Handle the paint event for rendering the gauge.
+        """!@brief Handle the paint event for rendering the gauge.
 
         This method draws the temperature bar, gradient fill, tick marks, and text labels.
         It also includes a circle and value/unit display. Also handles resizing.
@@ -231,17 +220,14 @@ class Temp_Gauge(QWidget):
 
 
 class Tachometer(QWidget):
-    """
-    @class Tachometer
-    @brief A custom QWidget-based tachometer display widget.    
+    """!@brief A custom QWidget-based tachometer display widget.    
 
     This widget visually represents RPM (revolutions per minute) values using a combination of an arc and straight gauge bar.
     The gauge dynamically updates and fills using a gradient based on the current value.
     """
 
     def __init__(self, parent=None, max_value=5000):
-        """
-        @brief Constructor for the Tachometer widget.
+        """!@brief Constructor for the Tachometer widget.
 
         @param parent The parent widget (optional).
         @param max_value The maximum RPM value shown on the tachometer.
@@ -258,8 +244,7 @@ class Tachometer(QWidget):
 
 
     def add_to_value(self, change):
-        """
-        @brief Add to the tachometer gauge value.
+        """!@brief Add to the tachometer gauge value.
 
         @param change The add amount to change the current value by.
         The new value wraps around if it exceeds the max value.
@@ -269,8 +254,7 @@ class Tachometer(QWidget):
         self.update()  # Request a redraw
 
     def update_value(self, new_value):
-        """
-        @brief Update the tachometer gauge value.
+        """!@brief Update the tachometer gauge value.
 
         @param new_value The new value for the gauge to be set to.
         The new value wraps around if it exceeds the max value.
@@ -280,8 +264,7 @@ class Tachometer(QWidget):
         self.update()  # Request a redraw
 
     def paintEvent(self, event):
-        """
-        @brief Handle the paint event for rendering the gauge.
+        """!@brief Handle the paint event for rendering the gauge.
 
         This method draws the tachometer gauge, gradient fill, tick marks, and text labels.
         It also includes a half-circle and strait line and value/unit display. Also handles resizing.
@@ -390,9 +373,7 @@ class Tachometer(QWidget):
              
 
 class Fuel_Gauge(QWidget):
-    """
-    @class Fuel_Gauge
-    @brief A custom QWidget-based fuel gauge display widget.    
+    """!@brief A custom QWidget-based fuel gauge display widget.    
 
     This widget displays a circular fuel gauge that updates its display based on fuel level,
     including color-coded sections and tick marks.
@@ -400,8 +381,7 @@ class Fuel_Gauge(QWidget):
     """
 
     def __init__(self, parent=None, max_value=100):
-        """
-        @brief Constructor for the Fuel_Gauge widget.
+        """!@brief Constructor for the Fuel_Gauge widget.
         @param parent The parent widget (optional).
         @param max_value The maximum value the fuel gauge can represent.
         """
@@ -417,8 +397,7 @@ class Fuel_Gauge(QWidget):
 
 
     def add_to_value(self, change):
-        """
-        @brief Add to the fuel gauge value.
+        """!@brief Add to the fuel gauge value.
 
         @param change The add amount to change the current value by.
         The new value wraps around if it exceeds the max value.
@@ -428,8 +407,7 @@ class Fuel_Gauge(QWidget):
         self.update()  # Request a redraw
 
     def update_value(self, new_value):
-        """
-        @brief Update the tachometer gauge value.
+        """!@brief Update the tachometer gauge value.
 
         @param new_value The new value for the gauge to be set to.
         The new value wraps around if it exceeds the max value.
@@ -440,8 +418,7 @@ class Fuel_Gauge(QWidget):
 
 
     def paintEvent(self, event):
-        """
-        @brief Handle the paint event for rendering the gauge.
+        """!@brief Handle the paint event for rendering the gauge.
 
         This method draws the fuel gauge, gradient fill, tick marks, and text labels.
         It also includes a half-circle and and value/unit display. Also handles resizing.
@@ -515,17 +492,14 @@ class Fuel_Gauge(QWidget):
 
 
 class Speedometer(QWidget):
-    """
-    @class Speedometer
-    @brief A QWidget-based speedometer that visually displays a numerical speed value in MPH.
+    """!@brief A QWidget-based speedometer that visually displays a numerical speed value in MPH.
 
     This widget presents a digital-style speedometer readout. The speed value is updated dynamically
     and rendered in a custom font, centered on the widget. The display adapts its text alignment
     based on the number of digits in the speed.
     """
     def __init__(self, parent=None, max_value=200):
-        """
-        @brief Constructor for the Speedometer widget.
+        """!@brief Constructor for the Speedometer widget.
         @param parent The parent widget (optional).
         @param max_value The maximum speed value that can be displayed.
         """
@@ -542,8 +516,7 @@ class Speedometer(QWidget):
 
 
     def add_to_value(self, change):
-        """
-        @brief Adds to the speedometer's value by a specified change.
+        """!@brief Adds to the speedometer's value by a specified change.
         @param change The amount to adjust the current speed by. Wraps around on overflow.
         """
         # Update the speedometer value
@@ -551,8 +524,7 @@ class Speedometer(QWidget):
         self.update()  # Request a redraw
 
     def update_value(self, new_value):
-        """
-        @brief Update the speedometer gauge value.
+        """!@brief Update the speedometer gauge value.
 
         @param new_value The new value for the gauge to be set to.
         The new value wraps around if it exceeds the max value.
@@ -562,8 +534,7 @@ class Speedometer(QWidget):
         self.update()  # Request a redraw
 
     def paintEvent(self, event):
-        """
-        @brief Handle the paint event for rendering the speedometer.
+        """!@brief Handle the paint event for rendering the speedometer.
 
         This method draws the speedometer, which is just a text label with RPM added to the end of it.
         
@@ -594,9 +565,7 @@ class Speedometer(QWidget):
 
 
 class Menu(QWidget):
-    """
-    @class Menu
-    @brief A widget that displays a scrollable menu interface with selectable modes.
+    """!@brief A widget that displays a scrollable menu interface with selectable modes.
 
     The Menu widget provides a simple left-right navigable menu bar that appears at the bottom
     of the window. It takes the middle option as the currently selected mode and displays the previous and next 
@@ -604,8 +573,7 @@ class Menu(QWidget):
     """
 
     def __init__(self, parent=None, modes=[]):
-        """
-        @brief Constructor for the Menu widget.
+        """!@brief Constructor for the Menu widget.
         @param parent The parent widget (optional).
         @param modes A list of mode names to cycle through in the menu.
         """
@@ -624,8 +592,7 @@ class Menu(QWidget):
 
 
     def update_value(self, move_value):
-        """
-        @brief Updates the currently selected menu state.
+        """!@brief Updates the currently selected menu state.
         @param move_value The number of steps to move in the modes list (positive or negative).
         """
         # Change the menu's mode
@@ -638,8 +605,7 @@ class Menu(QWidget):
 
 
     def paintEvent(self, event):
-        """
-        @brief Paint event handler that draws the menu bar and its current state.
+        """!@brief Paint event handler that draws the menu bar and its current state.
         @param event The QPaintEvent that triggered the paint update.
         """
         painter = QPainter(self)
@@ -674,17 +640,14 @@ class Menu(QWidget):
 
 
 class Rotating_Image(QWidget):
-    """
-    @class Rotating_Image
-    @brief A QWidget that cycles through a list of PNG images at a set interval.
+    """!@brief A QWidget that cycles through a list of PNG images at a set interval.
 
     The Rotating_Image widget displays one image at a time from a provided list of PNG paths.
     It automatically rotates to the next image after a fixed time interval. The displayed image
     resizes dynamically with the widget while maintaining its aspect ratio.
     """
     def __init__(self, parent=None, png_paths=[], height=100, width=100, image_time=10000):
-        """
-        @brief Constructor for the Rotating_Image widget.
+        """!@brief Constructor for the Rotating_Image widget.
         @param parent The parent widget (optional).
         @param png_paths List of file paths to PNG images for rotation.
         @param height Initial height of the image display area.
@@ -713,8 +676,7 @@ class Rotating_Image(QWidget):
 
 
     def resizeEvent(self, event):
-        """
-        @brief Handles widget resizing and scales the image accordingly.
+        """!@brief Handles widget resizing and scales the image accordingly.
         @param event QResizeEvent triggered when the widget is resized.
         """
         super().resizeEvent(event)
@@ -726,8 +688,7 @@ class Rotating_Image(QWidget):
 
 
     def change_image(self):
-        """
-        @brief Advances to the next image in the list and updates the display.
+        """!@brief Advances to the next image in the list and updates the display.
         
         This method is called automatically by a timer. It cycles through the image list
         and applies scaling to fit the widget's dimensions.
@@ -750,16 +711,13 @@ class Rotating_Image(QWidget):
 
 
 class Variable_Section(QWidget):
-    """
-    @class Variable_Section
-    @brief A QWidget that handles a wide variety of uses for the Bobcat Baja team.*Bold* Not recommend to use as is outside of Bobcat Baja.
+    """!@brief A QWidget that handles a wide variety of uses for the Bobcat Baja team.*Bold* Not recommend to use as is outside of Bobcat Baja.
 
     A set of custom widgets that have specific uses for Bobcat Baja.
     These currently include "Startup", "Competition", "Rear Steer", "Two-Step" and "Lap Time" although they are not all complete.
     """
     def __init__(self, parent=None):
-        """
-        @brief Constructor for the variable section widget. Initializes to "Startup" sub-widget.
+        """!@brief Constructor for the variable section widget. Initializes to "Startup" sub-widget.
         @param parent The parent widget (optional).
         """
         super().__init__(parent)
@@ -786,8 +744,7 @@ class Variable_Section(QWidget):
         self.two_step_bad_input = False
 
     def change_widget(self, new_widget):
-        """
-        @brief Changes the variable section to the new widget that is passed to it and redraws the new widget.
+        """!@brief Changes the variable section to the new widget that is passed to it and redraws the new widget.
         @param new_widget The new widget to be displayed.
         """
         self.current_widget = new_widget
@@ -804,8 +761,7 @@ class Variable_Section(QWidget):
         self.update()  # Request a redraw
 
     def paintEvent(self, event):
-        """
-        @brief Paint event handler that calls the function that the variable widget is set to by its current state.
+        """!@brief Paint event handler that calls the function that the variable widget is set to by its current state.
         @param event The QPaintEvent that triggered the paint update.
         """
         painter = QPainter(self)
@@ -838,8 +794,7 @@ class Variable_Section(QWidget):
 
 
     def draw_Startup(self, painter):
-        """
-        @brief Draws the startup instructional overlay on the widget.
+        """!@brief Draws the startup instructional overlay on the widget.
         @param painter QPainter object used for rendering text on the widget.
 
         This function displays startup instructions for both the HID Control and Switch Control systems.
@@ -866,8 +821,7 @@ Switch Control Manual:
 
     #TODO
     def draw_Competition(self, painter):
-        """
-        @brief Draws the Competition overlay on the widget.
+        """!@brief Draws the Competition overlay on the widget.
         @param painter QPainter object used for rendering text on the widget.
 
         This function is not complete.
@@ -876,8 +830,7 @@ Switch Control Manual:
 
     
     def draw_Rear_Steer(self, painter):
-        """
-        @brief Draws the Rear Steer overlay on the widget.
+        """!@brief Draws the Rear Steer overlay on the widget.
         @param painter QPainter object used for rendering text on the widget.
 
         This function is not complete.
@@ -886,8 +839,7 @@ Switch Control Manual:
     
     
     def draw_Two_Step(self, painter):
-        """
-        @brief Draws the two-Step RPM limit adjustment interface.
+        """!@brief Draws the two-Step RPM limit adjustment interface.
         @param painter QPainter object used to render the visual interface.
 
         This function draws the two-step RPM bounds adjustment screen, which allows the user to configure
@@ -975,8 +927,7 @@ Switch Control Manual:
 
 
     def update_two_step(self, value):
-        """
-        @brief Updates the currently selected two-step digit by a given increment or decrement.
+        """!@brief Updates the currently selected two-step digit by a given increment or decrement.
         @param value Integer value to apply (+1 to increment, -1 to decrement the selected digit).
 
         This function modifies one of the four digit values used for setting the two-step RPM limit,
@@ -1008,8 +959,7 @@ Switch Control Manual:
         self.update()
 
     def move_two_step(self):
-        """
-        @brief Handles the progression through the two-step digit selection and boundary-setting process.
+        """!@brief Handles the progression through the two-step digit selection and boundary-setting process.
 
         If the currently selected digit is the RPM label (end of the sequence), then:
         - If setting the "Upper" bound, the digit values are converted into an integer and saved as the upper limit.
@@ -1048,8 +998,7 @@ Switch Control Manual:
         self.update()
 
     def draw_Lap_Time(self, painter):
-        """
-        @brief Draws the Lap Time overlay on the widget.
+        """!@brief Draws the Lap Time overlay on the widget.
         @param painter QPainter object used for rendering text on the widget.
 
         This function is not complete.
@@ -1058,8 +1007,7 @@ Switch Control Manual:
 
 
     def draw_Error(self, painter):
-        """
-        @brief Draws the Error overlay on the widget.
+        """!@brief Draws the Error overlay on the widget.
         @param painter QPainter object used for rendering text on the widget.
 
         This function only occurs when the widget selected doesn't have a draw function for it.
